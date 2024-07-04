@@ -207,11 +207,11 @@ addTileMatrix <- function(
       nf1 <- length(fragments)
 
       #Check 1
-      fragmentsBad1 <- fragments[!(start(fragments) >= 1)]
+      fragmentsBad1 <- fragments[!(start(fragments) > 1)]
       fragments <- fragments[start(fragments) >= 1]
 
       #Check 2
-      fragmentsBad2 <- fragments[!(end(fragments) <= chromLengths[z])]
+      fragmentsBad2 <- fragments[!(end(fragments) < chromLengths[z])]
       fragments <- fragments[end(fragments) <= chromLengths[z]]
 
       #Check N
