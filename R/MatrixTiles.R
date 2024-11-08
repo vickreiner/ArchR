@@ -232,7 +232,7 @@ addTileMatrix <- function(
       .logThis(trunc(start(fragments) / tileSize), "1", logFile = logFile)
       .logThis(trunc(end(fragments) / tileSize), "2", logFile = logFile)
       
-      .logThis(as.vector(c(matchID, matchID), "3", logFile = logFile)
+      .logThis(as.vector(c(matchID, matchID)), "3", logFile = logFile)
       
 
       #Create Sparse Matrix
