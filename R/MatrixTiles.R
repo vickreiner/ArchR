@@ -210,7 +210,7 @@ addTileMatrix <- function(
       fragmentsBad1 <- fragments[!(start(fragments) > 1)]
       fragments <- fragments[start(fragments) >= 1]
 
-      #Check 2
+      #Check 21
       fragmentsBad2 <- fragments[!(end(fragments) < chromLengths[z])]
       fragments <- fragments[end(fragments) <= chromLengths[z]]
 
@@ -225,6 +225,15 @@ addTileMatrix <- function(
         .logThis(fragmentsBad2, "fragmentsBad2", logFile = logFile)
         print(fragmentsBad2)
       }
+      
+      a <- "test"
+      .logThis(a, "Test", logFile = logFile)
+      
+      .logThis(trunc(start(fragments) / tileSize), "1", logFile = logFile)
+      .logThis(trunc(end(fragments) / tileSize), "2", logFile = logFile)
+      
+      .logThis(as.vector(c(matchID, matchID), "3", logFile = logFile)
+      
 
       #Create Sparse Matrix
       mat <- Matrix::sparseMatrix(
