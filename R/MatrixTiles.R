@@ -224,17 +224,19 @@ addTileMatrix <- function(
         print("Bad2 (End greater than chromsome length): ")
         .logThis(fragmentsBad2, "fragmentsBad2", logFile = logFile)
         print(fragmentsBad2)
+        
+        #Rematch cells
+        #Match Cells
+        matchID <- S4Vectors::match(mcols(fragments)$RG, cellNames)
+        
       }
       
       a <- "test"
       .logThis(a, "Test", logFile = logFile)
+      .logThis(c(trunc(start(fragments) / tileSize), trunc(end(fragments) / tileSize)) + 1, "1", logFile = logFile)
+      .logThis(as.vector(c(matchID, matchID)), "2", logFile = logFile)
       
-      .logThis(trunc(start(fragments) / tileSize), "1", logFile = logFile)
-      .logThis(trunc(end(fragments) / tileSize), "2", logFile = logFile)
       
-      .logThis(as.vector(c(matchID, matchID)), "3", logFile = logFile)
-      
-
       #Create Sparse Matrix
       mat <- Matrix::sparseMatrix(
           i = c(trunc(start(fragments) / tileSize), trunc(end(fragments) / tileSize)) + 1,
